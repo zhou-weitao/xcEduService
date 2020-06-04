@@ -48,7 +48,7 @@ public class PageService {
         }
         //页面别名
         if (StringUtils.isNotEmpty(queryPageRequest.getPageAliase())) {
-            cmsPage.setPageAliase(queryPageRequest.getPageAliase());
+            cmsPage.setPageAlias(queryPageRequest.getPageAliase());
         }
         //创建条件实例
         Example<CmsPage> example = Example.of(cmsPage, exampleMatcher);
@@ -108,7 +108,7 @@ public class PageService {
             page.setHtmlFileId(cmsPage.getHtmlFileId());
             page.setPageId(cmsPage.getPageId());
             page.setPageParameter(cmsPage.getPageParameter());
-            page.setPageAliase(cmsPage.getPageAliase());
+            page.setPageAlias(cmsPage.getPageAlias());
             page.setPageType(cmsPage.getPageType());
             page.setPageTemplate(cmsPage.getPageTemplate());
             page.setPageCreateTime(cmsPage.getPageCreateTime());

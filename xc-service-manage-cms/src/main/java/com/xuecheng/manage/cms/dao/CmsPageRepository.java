@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 /**
  * @author wtzhou
  */
-public interface CmsPageRepository extends MongoRepository<CmsPage,String> {
+public interface CmsPageRepository extends MongoRepository<CmsPage, String> {
 
     /**
      * 页面名称查询

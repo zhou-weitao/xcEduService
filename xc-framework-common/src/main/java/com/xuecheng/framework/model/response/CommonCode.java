@@ -28,7 +28,9 @@ public enum CommonCode implements ResultCode{
     /**
      * 内部错误
      */
-    SERVER_ERROR(false,99999,"抱歉，系统繁忙，请稍后重试！");
+    SERVER_ERROR(false,99999,"抱歉，系统繁忙，请稍后重试！"),
+
+    INVALID_PARAM(false,88888,"请求参数异常");
 //    private static ImmutableMap<Integer, CommonCode> codes ;
 
     boolean success;

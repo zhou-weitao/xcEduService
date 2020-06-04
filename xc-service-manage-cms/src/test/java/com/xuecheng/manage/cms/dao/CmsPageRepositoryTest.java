@@ -1,9 +1,6 @@
 package com.xuecheng.manage.cms.dao;
 
 import com.xuecheng.framework.domain.cms.CmsPage;
-import com.xuecheng.framework.model.response.QueryResult;
-import net.minidev.json.JSONUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +45,7 @@ public class CmsPageRepositoryTest {
         if(optional.isPresent()){
             CmsPage cmsPage = optional.get();
             //设置要修改值
-            cmsPage.setPageAliase("test01");
+            cmsPage.setPageAlias("test01");
             //...
             //修改
             CmsPage save = cmsPageRepository.save(cmsPage);
