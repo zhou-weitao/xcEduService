@@ -1,9 +1,12 @@
 package com.xuecheng.test.freemarker.controller;
 
 import com.xuecheng.test.freemarker.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
@@ -14,6 +17,8 @@ import java.util.*;
 @Controller
 public class FreeMarkerTestController {
 
+    @Autowired
+    private RestTemplate restTemplate;
 
     @GetMapping("/test")
     public String getOne(Map<String, Object> map) {
@@ -45,5 +50,15 @@ public class FreeMarkerTestController {
 
         //响应对应模版的位置
         return "test1";
+
+    }
+
+    @GetMapping("/banner")
+    public String indexBanner(Map<String,Object> map) {
+
+        String dataUrl = "http://localhost:31001/page/config/getModel/5a791725dd573c3574ee333f";
+        ResponseEntity<Map> model = restTemplate.getForEntity(dataUrl, Map.class);
+        map.putAll(Objects.requireNonNull(model.getBody()));
+        return "index_banner";
     }
 }

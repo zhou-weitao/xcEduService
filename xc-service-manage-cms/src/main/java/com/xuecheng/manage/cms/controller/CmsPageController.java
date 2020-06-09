@@ -9,9 +9,6 @@ import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manage.cms.service.PageService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
-
-
 /**
  * @author wtzhou
  */
